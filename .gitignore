@@ -1,0 +1,23 @@
+# Виртуальное окружение
+venv/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+.env
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+config.secret
