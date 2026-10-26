@@ -1025,8 +1025,20 @@ async def get_statistics(callback: MessageCallback):
 
 
 async def main():
-    logger.info("Бот запущен и начал polling")
-    await dp.start_polling(bot)
+    logger.info("Бот запущен webhook")
+
+    webhook_url = "https://mtv-psy.ru/webhook"
+    webhook_secret = settings.SECRET_WEBHOOK_KEY
+
+    await bot.subscribe_webhook(url=webhook_url, secret=webhook_secret)
+
+    await dp.handle_webhook(
+        bot=bot,
+        host='0.0.0.0',
+        port=8080,
+        secret=webhook_secret,
+        path='/webhook'
+    )
 
 
 if __name__ == "__main__":
