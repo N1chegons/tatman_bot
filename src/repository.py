@@ -43,7 +43,7 @@ class UserRepository:
 
     @classmethod
     async def check_admin(cls, max_id: int):
-        ADMIN_IDS = [235995783]
+        ADMIN_IDS = [235995783, 56185590]
         is_admin = max_id in ADMIN_IDS
         if is_admin:
             logger.debug(f"Проверка прав: {max_id} - админ")
